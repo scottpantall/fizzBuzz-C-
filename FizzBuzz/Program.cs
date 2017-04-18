@@ -11,17 +11,37 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("HEY YOU GUUYYYS!");
+            int fizz;
+            int buzz;
+            int outputLength;
 
             using (StreamReader reader = File.OpenText(args[0]))
                 while (!reader.EndOfStream)
                 {
                     string line = reader.ReadLine();
-                    Console.WriteLine(line);
+                    string[] numbers = line.Split(' ');
+
+                    fizz = Int32.Parse(numbers[0]);
+                    buzz = Int32.Parse(numbers[1]);
+                    outputLength = Int32.Parse(numbers[2]);
+
+                    for(int i = 1; i <= outputLength; i++)
+                    {
+                        if ((i % fizz == 0) && (i % buzz == 0))
+                            Console.Write("FB ");
+                        else if (i % fizz == 0)
+                            Console.Write("F ");
+                        else if (i % buzz == 0)
+                            Console.Write("B ");
+                        else
+                            Console.Write(i + " ");
+                    }
+                    Console.Write("\n");  
                 }
 
+            //Pauses app until key is pressed
             Console.WriteLine("Press any key to continue...");
-            Console.ReadKey(); //Pauses app until key is pressed
+            Console.ReadKey(); 
         }
     }
 }
