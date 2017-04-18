@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FizzBuzz
 {
@@ -37,11 +33,7 @@ namespace FizzBuzz
                             Console.Write(i + " ");
                     }
                     Console.Write("\n");  
-                }
-
-            //Pauses app until key is pressed
-            Console.WriteLine("Press any key to continue...");
-            Console.ReadKey(); 
+                } 
         }
     }
 }
